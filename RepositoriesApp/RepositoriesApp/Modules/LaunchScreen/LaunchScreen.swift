@@ -14,19 +14,21 @@ struct LaunchScreen: View {
         ZStack {
             Color(.blue)
                 .ignoresSafeArea()
-            Text("Launch Screen")
+            Text("repository_app")
                 .font(.largeTitle)
                 .foregroundColor(.white)
-        }.task {
-            await viewModel.showNextScreen()
-        }
+        }.onAppear(perform: viewModel.showNextScreen)
     }
 }
 
 struct LaunchScreen_Previews: PreviewProvider {
     static var previews: some View {
         LaunchScreen(
-            viewModel: LaunchScreenViewModel(router: Router.shared)
+            viewModel: LaunchScreenViewModel(
+                router: Router.shared,
+                networkClient: assembler.resolver.resolve(NetworkClient.self)!,
+                authCredentialsProvider: assembler.resolver.resolve(AuthCredentialsProvider.self)!
+            )
         )
     }
 }

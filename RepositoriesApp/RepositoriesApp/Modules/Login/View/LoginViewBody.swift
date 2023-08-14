@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginViewBody: View {
-    @State var tokenText: String = ""
+    @State var tokenText = ""
     @State var isPressed = false
 
     var body: some View {

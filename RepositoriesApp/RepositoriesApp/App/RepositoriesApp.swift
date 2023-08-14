@@ -1,28 +1,24 @@
-//
-//  RepositoriesAppApp.swift
-//  RepositoriesApp
-//
-//  Created by Temirlan Orazkulov on 11.08.2023.
-//
-
 import SwiftUI
+
+let assembler = AssemblerFactory().makeAssembler()
 
 @main
 struct RepositoriesApp: App {
     @ObservedObject var router = Router.shared
 
     var body: some Scene {
-        WindowGroup {
+        let modulesFactory = ModulesFactory(assembler: assembler)
+        return WindowGroup {
             NavigationStack(path: $router.path) {
-                LaunchScreen(viewModel: LaunchScreenViewModel(router: router))
+                modulesFactory.makeLaunchScreen()
                     .navigationDestination(for: Route.self) { route in
                         switch route {
                         case .login:
-                            LoginView()
+                            modulesFactory.makeLogin()
                         case .history:
-                            LoginView()
+                            modulesFactory.makeHistory()
                         case .repositories:
-                            RepositoriesView()
+                            modulesFactory.makeRepositories()
                         }
                     }
             }

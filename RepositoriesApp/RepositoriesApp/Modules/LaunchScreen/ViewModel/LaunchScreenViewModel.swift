@@ -6,21 +6,41 @@
 //
 
 import Foundation
+import Combine
 
 final class LaunchScreenViewModel: ObservableObject {
     private let router: Router
+    private let networkClient: NetworkClient
+    private let authCredentialsProvider: AuthCredentialsProvider
 
-    init(router: Router) {
+    private var cancellables: Set<AnyCancellable> = []
+
+    init(
+        router: Router,
+        networkClient: NetworkClient,
+        authCredentialsProvider: AuthCredentialsProvider
+    ) {
         self.router = router
+        self.networkClient = networkClient
+        self.authCredentialsProvider = authCredentialsProvider
     }
 
-    func showNextScreen() async {
-        // 1 second = 1_000_000_000 nanoseconds
-        try? await Task.sleep(nanoseconds: 2_000_000_000)
-        if AuthenticationStore.shared.getToken() != nil {
+    func showNextScreen() {
+        authCredentialsProvider.isActive ? getUser() : router.showLogin()
+    }
+
+    private func getUser() {
+        let cancellable: Future<User, Error> = networkClient.get("/user")
+        cancellable.sink { error in
+            print(error)
+        } receiveValue: { [weak self] user in
+            guard let self else {
+                return
+            }
+
+            print("USER:")
+            print(user)
             router.showRepositories()
-        } else {
-            router.showLogin()
-        }
+        }.store(in: &cancellables)
     }
 }

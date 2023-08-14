@@ -1,2 +1,4 @@
 "sign_in" = "Sign in";
 "enter_generated_token" = "Enter generated token";
+"server_unavailable_description" = "Server unavailable";
+"repository_app" = "Repository App";
