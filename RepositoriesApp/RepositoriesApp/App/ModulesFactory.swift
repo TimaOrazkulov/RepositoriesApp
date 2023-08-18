@@ -1,5 +1,6 @@
 import Swinject
 import SwiftUI
+import SafariServices
 
 final class ModulesFactory {
     private let assembler: Assembler
@@ -9,13 +10,7 @@ final class ModulesFactory {
     }
 
     func makeLaunchScreen() -> some View {
-        LaunchScreen(
-            viewModel: LaunchScreenViewModel(
-                router: Router.shared,
-                networkClient: assembler.resolver.resolve(NetworkClient.self)!,
-                authCredentialsProvider: assembler.resolver.resolve(AuthCredentialsProvider.self)!
-            )
-        )
+        LaunchScreen()
     }
 
     func makeLogin() -> some View {

@@ -1,46 +1,39 @@
-//
-//  LaunchScreenViewModel.swift
-//  RepositoriesApp
-//
-//  Created by Temirlan Orazkulov on 11.08.2023.
-//
-
 import Foundation
 import Combine
 
 final class LaunchScreenViewModel: ObservableObject {
-    private let router: Router
-    private let networkClient: NetworkClient
-    private let authCredentialsProvider: AuthCredentialsProvider
+    @Published var showError = false
+    var error: Error?
+
+    private let router = assembler.resolver.resolve(Router.self)!
+    private let networkClient = assembler.resolver.resolve(NetworkClient.self)!
+    private let authCredentialsProvider = assembler.resolver.resolve(AuthCredentialsProvider.self)!
+    private let userProfileProvider = assembler.resolver.resolve(UserProfileProvider.self)!
 
     private var cancellables: Set<AnyCancellable> = []
 
-    init(
-        router: Router,
-        networkClient: NetworkClient,
-        authCredentialsProvider: AuthCredentialsProvider
-    ) {
-        self.router = router
-        self.networkClient = networkClient
-        self.authCredentialsProvider = authCredentialsProvider
-    }
-
     func showNextScreen() {
-        authCredentialsProvider.isActive ? getUser() : router.showLogin()
-    }
-
-    private func getUser() {
-        let cancellable: Future<User, Error> = networkClient.get("/user")
-        cancellable.sink { error in
-            print(error)
-        } receiveValue: { [weak self] user in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self else {
                 return
             }
 
-            print("USER:")
-            print(user)
-            router.showRepositories()
+            authCredentialsProvider.isActive ? getUser() : router.showLogin()
+        }
+    }
+
+    private func getUser() {
+        networkClient.get("/user").sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                break
+            case let .failure(error):
+                self?.showError = true
+                self?.error = error
+            }
+        } receiveValue: { [weak self] user in
+            self?.userProfileProvider.user = user
+            self?.router.showRepositories()
         }.store(in: &cancellables)
     }
 }

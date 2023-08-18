@@ -68,7 +68,7 @@ extension Disk {
             path,
             from: directory,
             as: type,
-            decoder: JSONDecoder()
+            decoder: JSONDecoder.default
         )
     }
 

@@ -1,34 +1,31 @@
-//
-//  LaunchScreen.swift
-//  RepositoriesApp
-//
-//  Created by Temirlan Orazkulov on 11.08.2023.
-//
-
 import SwiftUI
 
 struct LaunchScreen: View {
-    @ObservedObject var viewModel: LaunchScreenViewModel
+    @StateObject var viewModel = LaunchScreenViewModel()
 
     var body: some View {
         ZStack {
-            Color(.blue)
-                .ignoresSafeArea()
-            Text("repository_app")
-                .font(.largeTitle)
-                .foregroundColor(.white)
-        }.onAppear(perform: viewModel.showNextScreen)
+            background
+            title
+        }
+        .onAppear(perform: viewModel.showNextScreen)
+        .modifier(ErrorAlertModifier(isPresented: $viewModel.showError, error: viewModel.error))
+    }
+
+    private var background: some View {
+        Color(.blue)
+            .ignoresSafeArea()
+    }
+
+    private var title: some View {
+        Text("repository_app")
+            .font(.largeTitle)
+            .foregroundColor(.white)
     }
 }
 
 struct LaunchScreen_Previews: PreviewProvider {
     static var previews: some View {
-        LaunchScreen(
-            viewModel: LaunchScreenViewModel(
-                router: Router.shared,
-                networkClient: assembler.resolver.resolve(NetworkClient.self)!,
-                authCredentialsProvider: assembler.resolver.resolve(AuthCredentialsProvider.self)!
-            )
-        )
+        LaunchScreen()
     }
 }

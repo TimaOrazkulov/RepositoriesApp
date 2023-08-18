@@ -2,3 +2,6 @@
 "enter_generated_token" = "Enter generated token";
 "server_unavailable_description" = "Server unavailable";
 "repository_app" = "Repository App";
+"fetch_data" = "Fetching data, please wait...";
+"error" = "Error";
+"unknown_error" = "Unknown error occured";

@@ -1,10 +1,3 @@
-//
-//  NetworkAdapter.swift
-//  RepositoriesApp
-//
-//  Created by Temirlan Orazkulov on 13.08.2023.
-//
-
 import Foundation
 import Alamofire
 
@@ -26,12 +19,18 @@ final class NetworkAdapter: RequestAdapter {
         )
         if let token = authCredentialsProvider.token {
             headers.add(
-                HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+                .authToken(token)
             )
         }
 
         var urlRequest = urlRequest
         urlRequest.headers = headers
         completion(.success(urlRequest))
+    }
+}
+
+extension HTTPHeader {
+    static func authToken(_ value: String) -> HTTPHeader {
+        HTTPHeader(name: "Authorization", value: "Bearer \(value)")
     }
 }

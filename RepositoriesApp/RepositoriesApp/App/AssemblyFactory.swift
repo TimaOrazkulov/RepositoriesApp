@@ -13,7 +13,10 @@ final class AssemblerFactory {
             [
                 SessionAssembly(),
                 BaseURLAssembly(),
-                NetworkAssembly()
+                NetworkAssembly(),
+                UserAssembly(),
+                RepositoriesAssembly(),
+                RouterAssembly()
             ]
         )
     }

@@ -14,7 +14,7 @@ protocol NetworkClient: AnyObject {
         method: HTTPMethod,
         parameters: Parameters,
         headers: HTTPHeaders?
-    ) -> Future<Response, Error>
+    ) -> AnyPublisher<Response, Error>
 }
 
 extension NetworkClient {
@@ -23,7 +23,7 @@ extension NetworkClient {
         method: HTTPMethod,
         parameters: some Encodable,
         headers: HTTPHeaders? = nil
-    ) -> Future<Response, Error> {
+    ) -> AnyPublisher<Response, Error> {
         request(
             relativePath,
             method: method,
@@ -38,7 +38,7 @@ extension NetworkClient {
         _ relativePath: String,
         parameters: some Encodable,
         headers: HTTPHeaders? = nil
-    ) -> Future<Response, Error> {
+    ) -> AnyPublisher<Response, Error> {
         request(
             relativePath,
             method: .get,
@@ -51,7 +51,7 @@ extension NetworkClient {
         _ relativePath: String,
         parameters: some Encodable,
         headers: HTTPHeaders? = nil
-    ) -> Future<Response, Error> {
+    ) -> AnyPublisher<Response, Error> {
         request(
             relativePath,
             method: .post,
@@ -64,7 +64,7 @@ extension NetworkClient {
         _ relativePath: String,
         parameters: some Encodable,
         headers: HTTPHeaders? = nil
-    ) -> Future<Response, Error> {
+    ) -> AnyPublisher<Response, Error> {
         request(
             relativePath,
             method: .delete,
@@ -78,7 +78,7 @@ extension NetworkClient {
     public func get<Response: Decodable>(
         _ relativePath: String,
         headers: HTTPHeaders? = nil
-    ) -> Future<Response, Error> {
+    ) -> AnyPublisher<Response, Error> {
         request(
             relativePath,
             method: .get,
@@ -90,7 +90,7 @@ extension NetworkClient {
     public func post<Response: Decodable>(
         _ relativePath: String,
         headers: HTTPHeaders? = nil
-    ) -> Future<Response, Error> {
+    ) -> AnyPublisher<Response, Error> {
         request(
             relativePath,
             method: .post,
@@ -102,7 +102,7 @@ extension NetworkClient {
     public func delete<Response: Decodable>(
         _ relativePath: String,
         headers: HTTPHeaders? = nil
-    ) -> Future<Response, Error> {
+    ) -> AnyPublisher<Response, Error> {
         request(
             relativePath,
             method: .delete,

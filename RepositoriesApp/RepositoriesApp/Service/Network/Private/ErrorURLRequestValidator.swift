@@ -39,6 +39,6 @@ final class ErrorURLRequestValidator {
             throw error
         }
 
-        return try JSONDecoder().decode(NetworkError.self, from: data)
+        return try JSONDecoder.default.decode(NetworkError.self, from: data)
     }
 }

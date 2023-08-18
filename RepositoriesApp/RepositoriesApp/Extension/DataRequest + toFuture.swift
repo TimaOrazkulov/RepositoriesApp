@@ -1,31 +1,44 @@
-//
-//  DataRequest + Future.swift
-//  RepositoriesApp
-//
-//  Created by Temirlan Orazkulov on 13.08.2023.
-//
-
 import Alamofire
 import Combine
 import Foundation
 
 extension DataRequest {
     func toFuture<Response: Decodable>() -> Future<Response, Error> {
+        Response.self is any Sequence.Type ? toFutureSequence() : toFutureDecodable()
+    }
+
+    private func toFutureDecodable<Response: Decodable>() -> Future<Response, Error> {
         Future { promise in
             self.responseDecodable(
                 of: Response.self,
                 queue: DispatchQueue.global(qos: .userInitiated),
-                decoder: JSONDecoder()
+                decoder: JSONDecoder.default
             ) { response in
                 switch response.result {
                 case let .success(result):
                     promise(.success(result))
                 case let .failure(error):
-                    if let error = error.asNetworkError {
-                        promise(.failure(error))
-                    } else {
+                    promise(.failure(error.asNetworkError ?? error))
+                }
+            }
+        }
+    }
+
+    private func toFutureSequence<Response: Decodable>() -> Future<Response, Error> {
+        Future { promise in
+            self.responseData(
+                queue: DispatchQueue.global(qos: .userInitiated)
+            ) { response in
+                switch response.result {
+                case let .success(data):
+                    do {
+                        let array = try JSONDecoder.default.decode(Response.self, from: data)
+                        promise(.success(array))
+                    } catch (let error) {
                         promise(.failure(error))
                     }
+                case let .failure(error):
+                    promise(.failure(error.asNetworkError ?? error))
                 }
             }
         }

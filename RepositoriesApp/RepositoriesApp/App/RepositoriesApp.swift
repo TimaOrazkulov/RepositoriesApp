@@ -4,7 +4,7 @@ let assembler = AssemblerFactory().makeAssembler()
 
 @main
 struct RepositoriesApp: App {
-    @ObservedObject var router = Router.shared
+    @ObservedObject var router = assembler.resolver.resolve(Router.self)!
 
     var body: some Scene {
         let modulesFactory = ModulesFactory(assembler: assembler)

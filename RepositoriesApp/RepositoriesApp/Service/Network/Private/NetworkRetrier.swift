@@ -31,6 +31,7 @@ final class NetworkRetrier: RequestRetrier {
             completion(.doNotRetry)
         case .tokenExpired:
             userSessionDestroyer.destroyUserSession()
+            completion(.doNotRetry)
         }
     }
 

@@ -24,6 +24,6 @@ struct NetworkAssembly: Assembly {
                 session: session,
                 baseURLProvider: r.resolve(BaseURLProvider.self)!
             )
-        }
+        }.inObjectScope(.weak)
     }
 }

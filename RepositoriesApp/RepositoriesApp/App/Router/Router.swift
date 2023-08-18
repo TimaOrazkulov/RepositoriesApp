@@ -8,8 +8,6 @@
 import SwiftUI
 
 final class Router: ObservableObject {
-    static let shared = Router()
-
     @Published var path: [Route] = []
 
     func showLogin() {

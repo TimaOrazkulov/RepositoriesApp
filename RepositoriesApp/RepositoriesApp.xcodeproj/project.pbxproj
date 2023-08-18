@@ -11,11 +11,9 @@
 		4767F3FB2A862BE300873913 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F3FA2A862BE300873913 /* LoginView.swift */; };
 		4767F3FD2A862BE400873913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4767F3FC2A862BE400873913 /* Assets.xcassets */; };
 		4767F4002A862BE400873913 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4767F3FF2A862BE400873913 /* Preview Assets.xcassets */; };
-		4767F41F2A86822400873913 /* LoginViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F41E2A86822400873913 /* LoginViewBody.swift */; };
 		4767F4292A8688C400873913 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4767F42B2A8688C400873913 /* Localizable.strings */; };
 		4767F4332A868A6800873913 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 4767F4322A868A6800873913 /* KeychainAccess */; };
 		4767F4382A868D0F00873913 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4767F4372A868D0F00873913 /* Alamofire */; };
-		4767F43A2A868D5500873913 /* GitHubUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4392A868D5500873913 /* GitHubUserProvider.swift */; };
 		4767F43C2A86919900873913 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F43B2A86919900873913 /* Route.swift */; };
 		4767F43E2A8691CB00873913 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F43D2A8691CB00873913 /* Router.swift */; };
 		4767F4422A8693D800873913 /* RepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4412A8693D800873913 /* RepositoriesView.swift */; };
@@ -48,8 +46,23 @@
 		4767F4982A891DE700873913 /* ErrorURLRequestValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4972A891DE700873913 /* ErrorURLRequestValidator.swift */; };
 		4767F49E2A891F5E00873913 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F49D2A891F5E00873913 /* NetworkError.swift */; };
 		4767F4A12A89210600873913 /* String + localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4A02A89210600873913 /* String + localized.swift */; };
-		4767F4A32A8923D700873913 /* DataRequest + Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4A22A8923D700873913 /* DataRequest + Future.swift */; };
+		4767F4A32A8923D700873913 /* DataRequest + toFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4A22A8923D700873913 /* DataRequest + toFuture.swift */; };
 		4767F4A52A894FDB00873913 /* NetworkRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4A42A894FDB00873913 /* NetworkRetrier.swift */; };
+		4767F4AF2A8A7C2100873913 /* RouterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4AE2A8A7C2100873913 /* RouterAssembly.swift */; };
+		4767F4B42A8A7D6C00873913 /* UserAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4B32A8A7D6C00873913 /* UserAssembly.swift */; };
+		4767F4B82A8A7D7F00873913 /* UserProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4B72A8A7D7F00873913 /* UserProfileProvider.swift */; };
+		4767F4BA2A8A88A400873913 /* UserProfileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4B92A8A88A400873913 /* UserProfileStorage.swift */; };
+		4767F4BE2A8AABC100873913 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4BD2A8AABC100873913 /* LoginViewModel.swift */; };
+		4767F4C02A8AADB000873913 /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4BF2A8AADB000873913 /* LoadingButtonView.swift */; };
+		4767F4C52A8B500800873913 /* JSONDecoder + default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4C42A8B500800873913 /* JSONDecoder + default.swift */; };
+		4767F4CA2A8BDB4700873913 /* RepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4C92A8BDB4700873913 /* RepositoryView.swift */; };
+		4767F4CE2A8BE1E500873913 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4767F4CD2A8BE1E500873913 /* Kingfisher */; };
+		4767F4D32A8BEAD900873913 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4D22A8BEAD900873913 /* RepositoriesViewModel.swift */; };
+		4767F4D82A8BEB3700873913 /* RepositoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4D72A8BEB3700873913 /* RepositoriesProvider.swift */; };
+		4767F4DA2A8BEC3500873913 /* RepositoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4D92A8BEC3500873913 /* RepositoriesManager.swift */; };
+		4767F4DC2A8BEE4B00873913 /* RepositoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4DB2A8BEE4B00873913 /* RepositoriesAssembly.swift */; };
+		4767F4E32A8D172F00873913 /* GetRepositoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4E22A8D172F00873913 /* GetRepositoriesRequest.swift */; };
+		4767F4F92A8E91B000873913 /* ErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4F82A8E91B000873913 /* ErrorAlertModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,10 +71,8 @@
 		4767F3FA2A862BE300873913 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4767F3FC2A862BE400873913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4767F3FF2A862BE400873913 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4767F41E2A86822400873913 /* LoginViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewBody.swift; sourceTree = "<group>"; };
 		4767F42A2A8688C400873913 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4767F42C2A8688C700873913 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4767F4392A868D5500873913 /* GitHubUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUserProvider.swift; sourceTree = "<group>"; };
 		4767F43B2A86919900873913 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		4767F43D2A8691CB00873913 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4767F4412A8693D800873913 /* RepositoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesView.swift; sourceTree = "<group>"; };
@@ -92,8 +103,22 @@
 		4767F4972A891DE700873913 /* ErrorURLRequestValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorURLRequestValidator.swift; sourceTree = "<group>"; };
 		4767F49D2A891F5E00873913 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		4767F4A02A89210600873913 /* String + localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + localized.swift"; sourceTree = "<group>"; };
-		4767F4A22A8923D700873913 /* DataRequest + Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequest + Future.swift"; sourceTree = "<group>"; };
+		4767F4A22A8923D700873913 /* DataRequest + toFuture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequest + toFuture.swift"; sourceTree = "<group>"; };
 		4767F4A42A894FDB00873913 /* NetworkRetrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRetrier.swift; sourceTree = "<group>"; };
+		4767F4AE2A8A7C2100873913 /* RouterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterAssembly.swift; sourceTree = "<group>"; };
+		4767F4B32A8A7D6C00873913 /* UserAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAssembly.swift; sourceTree = "<group>"; };
+		4767F4B72A8A7D7F00873913 /* UserProfileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileProvider.swift; sourceTree = "<group>"; };
+		4767F4B92A8A88A400873913 /* UserProfileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileStorage.swift; sourceTree = "<group>"; };
+		4767F4BD2A8AABC100873913 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4767F4BF2A8AADB000873913 /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
+		4767F4C42A8B500800873913 /* JSONDecoder + default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder + default.swift"; sourceTree = "<group>"; };
+		4767F4C92A8BDB4700873913 /* RepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryView.swift; sourceTree = "<group>"; };
+		4767F4D22A8BEAD900873913 /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
+		4767F4D72A8BEB3700873913 /* RepositoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesProvider.swift; sourceTree = "<group>"; };
+		4767F4D92A8BEC3500873913 /* RepositoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesManager.swift; sourceTree = "<group>"; };
+		4767F4DB2A8BEE4B00873913 /* RepositoriesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesAssembly.swift; sourceTree = "<group>"; };
+		4767F4E22A8D172F00873913 /* GetRepositoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoriesRequest.swift; sourceTree = "<group>"; };
+		4767F4F82A8E91B000873913 /* ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +130,7 @@
 				4767F4332A868A6800873913 /* KeychainAccess in Frameworks */,
 				4767F4382A868D0F00873913 /* Alamofire in Frameworks */,
 				4767F47A2A89138300873913 /* Swinject in Frameworks */,
+				4767F4CE2A8BE1E500873913 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +163,8 @@
 				4767F42B2A8688C400873913 /* Localizable.strings */,
 				4767F4162A8681D300873913 /* Modules */,
 				4767F3FE2A862BE400873913 /* Preview Content */,
+				4767F4F62A8E919D00873913 /* Reusable */,
+				4767F4E62A8E8D2000873913 /* ReusableViews */,
 				4767F40F2A8680B400873913 /* Service */,
 			);
 			path = RepositoriesApp;
@@ -155,6 +183,7 @@
 			children = (
 				4767F43B2A86919900873913 /* Route.swift */,
 				4767F43D2A8691CB00873913 /* Router.swift */,
+				4767F4AE2A8A7C2100873913 /* RouterAssembly.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -162,6 +191,8 @@
 		4767F40F2A8680B400873913 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4767F4D42A8BEB1C00873913 /* Repositories */,
+				4767F4B02A8A7D5500873913 /* User */,
 				4767F48C2A891C5100873913 /* BaseURL */,
 				4767F45F2A88B39800873913 /* Network */,
 				4767F46F2A88CBD600873913 /* Session */,
@@ -183,11 +214,9 @@
 		4767F4172A8681E500873913 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				4767F41B2A86820200873913 /* Service */,
-				4767F41A2A8681FD00873913 /* Model */,
-				4767F4192A8681F300873913 /* ViewModel */,
-				4767F4182A8681EF00873913 /* View */,
 				4767F3FA2A862BE300873913 /* LoginView.swift */,
+				4767F4182A8681EF00873913 /* View */,
+				4767F4192A8681F300873913 /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -195,7 +224,7 @@
 		4767F4182A8681EF00873913 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4767F41E2A86822400873913 /* LoginViewBody.swift */,
+				4767F4BF2A8AADB000873913 /* LoadingButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,29 +232,15 @@
 		4767F4192A8681F300873913 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4767F4BD2A8AABC100873913 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4767F41A2A8681FD00873913 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4767F4592A878C3500873913 /* User.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		4767F41B2A86820200873913 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				4767F4392A868D5500873913 /* GitHubUserProvider.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		4767F43F2A86933E00873913 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				4767F4FA2A8E9CF300873913 /* ViewModel */,
 				4767F45B2A88B1FC00873913 /* HistoryView.swift */,
 			);
 			path = History;
@@ -236,6 +251,8 @@
 			children = (
 				4767F4412A8693D800873913 /* RepositoriesView.swift */,
 				4767F44E2A86A16700873913 /* Model */,
+				4767F4C62A8BDB2400873913 /* View */,
+				4767F4D12A8BEAC700873913 /* ViewModel */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -261,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				4767F44F2A86A17E00873913 /* Repository.swift */,
+				4767F4E22A8D172F00873913 /* GetRepositoriesRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,7 +407,8 @@
 			isa = PBXGroup;
 			children = (
 				4767F4A02A89210600873913 /* String + localized.swift */,
-				4767F4A22A8923D700873913 /* DataRequest + Future.swift */,
+				4767F4A22A8923D700873913 /* DataRequest + toFuture.swift */,
+				4767F4C42A8B500800873913 /* JSONDecoder + default.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -413,6 +432,121 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		4767F4B02A8A7D5500873913 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4B22A8A7D6200873913 /* Private */,
+				4767F4B12A8A7D5E00873913 /* Public */,
+				4767F4B32A8A7D6C00873913 /* UserAssembly.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		4767F4B12A8A7D5E00873913 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4BC2A8AABAE00873913 /* Model */,
+				4767F4BB2A8AABA800873913 /* Protocol */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		4767F4B22A8A7D6200873913 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4B92A8A88A400873913 /* UserProfileStorage.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		4767F4BB2A8AABA800873913 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4B72A8A7D7F00873913 /* UserProfileProvider.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4767F4BC2A8AABAE00873913 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4592A878C3500873913 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4767F4C62A8BDB2400873913 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4C92A8BDB4700873913 /* RepositoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4767F4D12A8BEAC700873913 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4D22A8BEAD900873913 /* RepositoriesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4767F4D42A8BEB1C00873913 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4D62A8BEB2E00873913 /* Private */,
+				4767F4D52A8BEB2A00873913 /* Public */,
+				4767F4DB2A8BEE4B00873913 /* RepositoriesAssembly.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		4767F4D52A8BEB2A00873913 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4D72A8BEB3700873913 /* RepositoriesProvider.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		4767F4D62A8BEB2E00873913 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4D92A8BEC3500873913 /* RepositoriesManager.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		4767F4E62A8E8D2000873913 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		4767F4F62A8E919D00873913 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4F72A8E91A500873913 /* ViewModifiers */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		4767F4F72A8E91A500873913 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4F82A8E91B000873913 /* ErrorAlertModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		4767F4FA2A8E9CF300873913 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,6 +568,7 @@
 				4767F4372A868D0F00873913 /* Alamofire */,
 				4767F4552A86A85000873913 /* Cache */,
 				4767F4792A89138300873913 /* Swinject */,
+				4767F4CD2A8BE1E500873913 /* Kingfisher */,
 			);
 			productName = RepositoriesApp;
 			productReference = 4767F3F52A862BE300873913 /* RepositoriesApp.app */;
@@ -468,6 +603,7 @@
 				4767F4362A868D0F00873913 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4767F4542A86A85000873913 /* XCRemoteSwiftPackageReference "Cache" */,
 				4767F4782A89138300873913 /* XCRemoteSwiftPackageReference "Swinject" */,
+				4767F4CC2A8BE1E500873913 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 4767F3F62A862BE300873913 /* Products */;
 			projectDirPath = "";
@@ -496,40 +632,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4767F4E32A8D172F00873913 /* GetRepositoriesRequest.swift in Sources */,
+				4767F4C52A8B500800873913 /* JSONDecoder + default.swift in Sources */,
 				4767F4692A88C63200873913 /* Disk.swift in Sources */,
 				4767F43E2A8691CB00873913 /* Router.swift in Sources */,
 				4767F47F2A8914F100873913 /* NetworkAssembly.swift in Sources */,
 				4767F4922A891C9B00873913 /* BaseURLProviderImpl.swift in Sources */,
 				4767F3FB2A862BE300873913 /* LoginView.swift in Sources */,
+				4767F4BE2A8AABC100873913 /* LoginViewModel.swift in Sources */,
 				4767F4982A891DE700873913 /* ErrorURLRequestValidator.swift in Sources */,
 				4767F4812A89156000873913 /* SessionAssembly.swift in Sources */,
 				4767F4452A8695CC00873913 /* LaunchScreen.swift in Sources */,
-				4767F4A32A8923D700873913 /* DataRequest + Future.swift in Sources */,
+				4767F4A32A8923D700873913 /* DataRequest + toFuture.swift in Sources */,
+				4767F4CA2A8BDB4700873913 /* RepositoryView.swift in Sources */,
 				4767F4662A88C47D00873913 /* ProtectedStorage.swift in Sources */,
 				4767F49E2A891F5E00873913 /* NetworkError.swift in Sources */,
+				4767F4D32A8BEAD900873913 /* RepositoriesViewModel.swift in Sources */,
 				4767F4892A89187900873913 /* ModulesFactory.swift in Sources */,
 				4767F4502A86A17E00873913 /* Repository.swift in Sources */,
 				4767F4962A891DBF00873913 /* ParameterEncoderFactory.swift in Sources */,
 				4767F4482A86967900873913 /* LaunchScreenViewModel.swift in Sources */,
+				4767F4B82A8A7D7F00873913 /* UserProfileProvider.swift in Sources */,
 				4767F46B2A88C64100873913 /* DIskDirectory.swift in Sources */,
+				4767F4DC2A8BEE4B00873913 /* RepositoriesAssembly.swift in Sources */,
+				4767F4B42A8A7D6C00873913 /* UserAssembly.swift in Sources */,
+				4767F4AF2A8A7C2100873913 /* RouterAssembly.swift in Sources */,
 				4767F45A2A878C3500873913 /* User.swift in Sources */,
 				4767F45E2A88B2E900873913 /* NetworkClient.swift in Sources */,
 				4767F4A52A894FDB00873913 /* NetworkRetrier.swift in Sources */,
+				4767F4C02A8AADB000873913 /* LoadingButtonView.swift in Sources */,
 				4767F45C2A88B1FC00873913 /* HistoryView.swift in Sources */,
 				4767F46E2A88C68300873913 /* FileStorage.swift in Sources */,
 				4767F3F92A862BE300873913 /* RepositoriesApp.swift in Sources */,
+				4767F4BA2A8A88A400873913 /* UserProfileStorage.swift in Sources */,
 				4767F4712A88CBE600873913 /* AuthCredentialsProvider.swift in Sources */,
+				4767F4D82A8BEB3700873913 /* RepositoriesProvider.swift in Sources */,
 				4767F4902A891C6B00873913 /* BaseURLProvider.swift in Sources */,
 				4767F4A12A89210600873913 /* String + localized.swift in Sources */,
-				4767F43A2A868D5500873913 /* GitHubUserProvider.swift in Sources */,
 				4767F4942A891CCD00873913 /* BaseURLAssembly.swift in Sources */,
+				4767F4F92A8E91B000873913 /* ErrorAlertModifier.swift in Sources */,
+				4767F4DA2A8BEC3500873913 /* RepositoriesManager.swift in Sources */,
 				4767F4632A88B3C800873913 /* NetworkAdapter.swift in Sources */,
 				4767F4752A88CD6100873913 /* UserSessionCreater.swift in Sources */,
 				4767F4422A8693D800873913 /* RepositoriesView.swift in Sources */,
 				4767F43C2A86919900873913 /* Route.swift in Sources */,
 				4767F47D2A89149B00873913 /* AssemblyFactory.swift in Sources */,
 				4767F4732A88CC7300873913 /* UserSessionManager.swift in Sources */,
-				4767F41F2A86822400873913 /* LoginViewBody.swift in Sources */,
 				4767F4772A88CE7F00873913 /* UserSessionDestroyer.swift in Sources */,
 				4767F4872A8915A300873913 /* NetworkClientImpl.swift in Sources */,
 			);
@@ -778,6 +926,14 @@
 				version = 2.8.3;
 			};
 		};
+		4767F4CC2A8BE1E500873913 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = exactVersion;
+				version = 7.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -800,6 +956,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4767F4782A89138300873913 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		4767F4CD2A8BE1E500873913 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4767F4CC2A8BE1E500873913 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
