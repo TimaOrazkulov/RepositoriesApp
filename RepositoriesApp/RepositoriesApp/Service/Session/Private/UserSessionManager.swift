@@ -1,6 +1,8 @@
 import Foundation
 import Combine
 
+// MARK: - AuthCredentialsProvider
+
 final class UserSessionManager: AuthCredentialsProvider {
     @Published var isActive = false
 
@@ -23,11 +25,15 @@ final class UserSessionManager: AuthCredentialsProvider {
     }
 }
 
+// MARK: - UserSessionCreater
+
 extension UserSessionManager: UserSessionCreater {
     func createUserSession(token: String) {
         self.token = token
     }
 }
+
+// MARK: - UserSessionDestroyer
 
 extension UserSessionManager: UserSessionDestroyer {
     func destroyUserSession() {

@@ -18,7 +18,7 @@ extension DataRequest {
                 case let .success(result):
                     promise(.success(result))
                 case let .failure(error):
-                    promise(.failure(error.asNetworkError ?? error))
+                    promise(.failure(error.asNetworkError ?? error))    
                 }
             }
         }

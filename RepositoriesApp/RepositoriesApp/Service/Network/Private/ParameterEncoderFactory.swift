@@ -10,10 +10,11 @@ final class ParameterEncoderFactory {
                     arrayEncoding: .noBrackets,
                     dateEncoding: .iso8601,
                     keyEncoding: .convertToSnakeCase
-                )
+                ),
+                destination: .queryString
             )
         default:
-            return JSONParameterEncoder(encoder: JSONEncoder())
+            return JSONParameterEncoder(encoder: .default)
         }
     }
 }

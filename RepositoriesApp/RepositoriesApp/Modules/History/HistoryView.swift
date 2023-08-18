@@ -1,15 +1,33 @@
-//
-//  HistoryView.swift
-//  RepositoriesApp
-//
-//  Created by Temirlan Orazkulov on 13.08.2023.
-//
-
 import SwiftUI
 
 struct HistoryView: View {
+    @Environment(\.openURL) var openURL
+    @State var searchText = ""
+    @StateObject var viewModel = HistoryViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(repositories) { repository in
+                RepositoryView(
+                    repository: repository,
+                    shouldShowVisited: false
+                )
+                .onTapGesture {
+                    if let url = URL(string: repository.htmlUrl) {
+                        openURL(url)
+                    }
+                }
+            }
+        }
+        .listStyle(.plain)
+        .navigationTitle("history")
+        .toolbarBackground(.visible, for: .navigationBar)
+    }
+    
+    private var repositories: [Repository] {
+        searchText.isEmpty ? viewModel.repositories : viewModel.repositories.filter { repository in
+            repository.name.contains(searchText)
+        }
     }
 }
 

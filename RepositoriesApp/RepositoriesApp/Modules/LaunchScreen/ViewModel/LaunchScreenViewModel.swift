@@ -5,10 +5,9 @@ final class LaunchScreenViewModel: ObservableObject {
     @Published var showError = false
     var error: Error?
 
-    private let router = assembler.resolver.resolve(Router.self)!
-    private let networkClient = assembler.resolver.resolve(NetworkClient.self)!
-    private let authCredentialsProvider = assembler.resolver.resolve(AuthCredentialsProvider.self)!
-    private let userProfileProvider = assembler.resolver.resolve(UserProfileProvider.self)!
+    private let router = DependencyContainer.shared.resolve(Router.self)!
+    private let authCredentialsProvider = DependencyContainer.shared.resolve(AuthCredentialsProvider.self)!
+    private let userProfileProvider = DependencyContainer.shared.resolve(UserProfileProvider.self)!
 
     private var cancellables: Set<AnyCancellable> = []
 
@@ -23,7 +22,7 @@ final class LaunchScreenViewModel: ObservableObject {
     }
 
     private func getUser() {
-        networkClient.get("/user").sink { [weak self] completion in
+        userProfileProvider.getUser().sink { [weak self] completion in
             switch completion {
             case .finished:
                 break

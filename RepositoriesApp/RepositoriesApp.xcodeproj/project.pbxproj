@@ -20,7 +20,6 @@
 		4767F4452A8695CC00873913 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4442A8695CC00873913 /* LaunchScreen.swift */; };
 		4767F4482A86967900873913 /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4472A86967900873913 /* LaunchScreenViewModel.swift */; };
 		4767F4502A86A17E00873913 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F44F2A86A17E00873913 /* Repository.swift */; };
-		4767F4562A86A85000873913 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 4767F4552A86A85000873913 /* Cache */; };
 		4767F45A2A878C3500873913 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4592A878C3500873913 /* User.swift */; };
 		4767F45C2A88B1FC00873913 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F45B2A88B1FC00873913 /* HistoryView.swift */; };
 		4767F45E2A88B2E900873913 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F45D2A88B2E900873913 /* NetworkClient.swift */; };
@@ -38,7 +37,6 @@
 		4767F47F2A8914F100873913 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F47E2A8914F100873913 /* NetworkAssembly.swift */; };
 		4767F4812A89156000873913 /* SessionAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4802A89156000873913 /* SessionAssembly.swift */; };
 		4767F4872A8915A300873913 /* NetworkClientImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4862A8915A300873913 /* NetworkClientImpl.swift */; };
-		4767F4892A89187900873913 /* ModulesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4882A89187900873913 /* ModulesFactory.swift */; };
 		4767F4902A891C6B00873913 /* BaseURLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F48F2A891C6B00873913 /* BaseURLProvider.swift */; };
 		4767F4922A891C9B00873913 /* BaseURLProviderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4912A891C9B00873913 /* BaseURLProviderImpl.swift */; };
 		4767F4942A891CCD00873913 /* BaseURLAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4932A891CCD00873913 /* BaseURLAssembly.swift */; };
@@ -58,11 +56,17 @@
 		4767F4CA2A8BDB4700873913 /* RepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4C92A8BDB4700873913 /* RepositoryView.swift */; };
 		4767F4CE2A8BE1E500873913 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4767F4CD2A8BE1E500873913 /* Kingfisher */; };
 		4767F4D32A8BEAD900873913 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4D22A8BEAD900873913 /* RepositoriesViewModel.swift */; };
-		4767F4D82A8BEB3700873913 /* RepositoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4D72A8BEB3700873913 /* RepositoriesProvider.swift */; };
+		4767F4D82A8BEB3700873913 /* RepositoriesStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4D72A8BEB3700873913 /* RepositoriesStorageProvider.swift */; };
 		4767F4DA2A8BEC3500873913 /* RepositoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4D92A8BEC3500873913 /* RepositoriesManager.swift */; };
 		4767F4DC2A8BEE4B00873913 /* RepositoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4DB2A8BEE4B00873913 /* RepositoriesAssembly.swift */; };
-		4767F4E32A8D172F00873913 /* GetRepositoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4E22A8D172F00873913 /* GetRepositoriesRequest.swift */; };
 		4767F4F92A8E91B000873913 /* ErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767F4F82A8E91B000873913 /* ErrorAlertModifier.swift */; };
+		478E42022A8F40BF0004B7F4 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E42012A8F40BF0004B7F4 /* DependencyContainer.swift */; };
+		478E420A2A8F46D40004B7F4 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E42092A8F46D40004B7F4 /* HistoryViewModel.swift */; };
+		478E420C2A8F76370004B7F4 /* RepositoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E420B2A8F76370004B7F4 /* RepositoriesProvider.swift */; };
+		478E42112A8F768C0004B7F4 /* GetRepositoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E42102A8F768C0004B7F4 /* GetRepositoriesRequest.swift */; };
+		478E42132A8F79BF0004B7F4 /* JSONEncoder + default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E42122A8F79BF0004B7F4 /* JSONEncoder + default.swift */; };
+		478E42162A8F81CE0004B7F4 /* GetRepositoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E42152A8F81CE0004B7F4 /* GetRepositoriesResponse.swift */; };
+		47A9D91B2A8F910500378FE8 /* NavigationDestinationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9D91A2A8F910500378FE8 /* NavigationDestinationModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,7 +99,6 @@
 		4767F47E2A8914F100873913 /* NetworkAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		4767F4802A89156000873913 /* SessionAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAssembly.swift; sourceTree = "<group>"; };
 		4767F4862A8915A300873913 /* NetworkClientImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientImpl.swift; sourceTree = "<group>"; };
-		4767F4882A89187900873913 /* ModulesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesFactory.swift; sourceTree = "<group>"; };
 		4767F48F2A891C6B00873913 /* BaseURLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLProvider.swift; sourceTree = "<group>"; };
 		4767F4912A891C9B00873913 /* BaseURLProviderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLProviderImpl.swift; sourceTree = "<group>"; };
 		4767F4932A891CCD00873913 /* BaseURLAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLAssembly.swift; sourceTree = "<group>"; };
@@ -114,11 +117,17 @@
 		4767F4C42A8B500800873913 /* JSONDecoder + default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder + default.swift"; sourceTree = "<group>"; };
 		4767F4C92A8BDB4700873913 /* RepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryView.swift; sourceTree = "<group>"; };
 		4767F4D22A8BEAD900873913 /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
-		4767F4D72A8BEB3700873913 /* RepositoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesProvider.swift; sourceTree = "<group>"; };
+		4767F4D72A8BEB3700873913 /* RepositoriesStorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesStorageProvider.swift; sourceTree = "<group>"; };
 		4767F4D92A8BEC3500873913 /* RepositoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesManager.swift; sourceTree = "<group>"; };
 		4767F4DB2A8BEE4B00873913 /* RepositoriesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesAssembly.swift; sourceTree = "<group>"; };
-		4767F4E22A8D172F00873913 /* GetRepositoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoriesRequest.swift; sourceTree = "<group>"; };
 		4767F4F82A8E91B000873913 /* ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertModifier.swift; sourceTree = "<group>"; };
+		478E42012A8F40BF0004B7F4 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		478E42092A8F46D40004B7F4 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		478E420B2A8F76370004B7F4 /* RepositoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesProvider.swift; sourceTree = "<group>"; };
+		478E42102A8F768C0004B7F4 /* GetRepositoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoriesRequest.swift; sourceTree = "<group>"; };
+		478E42122A8F79BF0004B7F4 /* JSONEncoder + default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder + default.swift"; sourceTree = "<group>"; };
+		478E42152A8F81CE0004B7F4 /* GetRepositoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoriesResponse.swift; sourceTree = "<group>"; };
+		47A9D91A2A8F910500378FE8 /* NavigationDestinationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestinationModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4767F4562A86A85000873913 /* Cache in Frameworks */,
 				4767F4332A868A6800873913 /* KeychainAccess in Frameworks */,
 				4767F4382A868D0F00873913 /* Alamofire in Frameworks */,
 				4767F47A2A89138300873913 /* Swinject in Frameworks */,
@@ -164,7 +172,6 @@
 				4767F4162A8681D300873913 /* Modules */,
 				4767F3FE2A862BE400873913 /* Preview Content */,
 				4767F4F62A8E919D00873913 /* Reusable */,
-				4767F4E62A8E8D2000873913 /* ReusableViews */,
 				4767F40F2A8680B400873913 /* Service */,
 			);
 			path = RepositoriesApp;
@@ -191,11 +198,11 @@
 		4767F40F2A8680B400873913 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				4767F4D42A8BEB1C00873913 /* Repositories */,
-				4767F4B02A8A7D5500873913 /* User */,
 				4767F48C2A891C5100873913 /* BaseURL */,
 				4767F45F2A88B39800873913 /* Network */,
+				4767F4D42A8BEB1C00873913 /* Repositories */,
 				4767F46F2A88CBD600873913 /* Session */,
+				4767F4B02A8A7D5500873913 /* User */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -240,7 +247,7 @@
 		4767F43F2A86933E00873913 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				4767F4FA2A8E9CF300873913 /* ViewModel */,
+				478E42082A8F46C10004B7F4 /* ViewModel */,
 				4767F45B2A88B1FC00873913 /* HistoryView.swift */,
 			);
 			path = History;
@@ -250,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				4767F4412A8693D800873913 /* RepositoriesView.swift */,
-				4767F44E2A86A16700873913 /* Model */,
 				4767F4C62A8BDB2400873913 /* View */,
 				4767F4D12A8BEAC700873913 /* ViewModel */,
 			);
@@ -272,15 +278,6 @@
 				4767F4472A86967900873913 /* LaunchScreenViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4767F44E2A86A16700873913 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4767F44F2A86A17E00873913 /* Repository.swift */,
-				4767F4E22A8D172F00873913 /* GetRepositoriesRequest.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4767F45F2A88B39800873913 /* Network */ = {
@@ -352,6 +349,7 @@
 		4767F4852A89159600873913 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				478E42032A8F419B0004B7F4 /* Extension */,
 				4767F4622A88B3C800873913 /* NetworkAdapter.swift */,
 				4767F4862A8915A300873913 /* NetworkClientImpl.swift */,
 				4767F4952A891DBF00873913 /* ParameterEncoderFactory.swift */,
@@ -364,9 +362,9 @@
 		4767F48C2A891C5100873913 /* BaseURL */ = {
 			isa = PBXGroup;
 			children = (
+				4767F4932A891CCD00873913 /* BaseURLAssembly.swift */,
 				4767F48E2A891C6200873913 /* Private */,
 				4767F48D2A891C5D00873913 /* Public */,
-				4767F4932A891CCD00873913 /* BaseURLAssembly.swift */,
 			);
 			path = BaseURL;
 			sourceTree = "<group>";
@@ -407,8 +405,6 @@
 			isa = PBXGroup;
 			children = (
 				4767F4A02A89210600873913 /* String + localized.swift */,
-				4767F4A22A8923D700873913 /* DataRequest + toFuture.swift */,
-				4767F4C42A8B500800873913 /* JSONDecoder + default.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -416,10 +412,11 @@
 		4767F4A82A8952CD00873913 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				4767F47C2A89149B00873913 /* AssemblyFactory.swift */,
-				4767F4882A89187900873913 /* ModulesFactory.swift */,
+				478E42012A8F40BF0004B7F4 /* DependencyContainer.swift */,
 				4767F3F82A862BE300873913 /* RepositoriesApp.swift */,
+				478E42002A8F40AB0004B7F4 /* Factory */,
 				4767F40E2A8680AB00873913 /* Router */,
+				47A9D9192A8F90EE00378FE8 /* ViewModifiers */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -435,9 +432,9 @@
 		4767F4B02A8A7D5500873913 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				4767F4B32A8A7D6C00873913 /* UserAssembly.swift */,
 				4767F4B22A8A7D6200873913 /* Private */,
 				4767F4B12A8A7D5E00873913 /* Public */,
-				4767F4B32A8A7D6C00873913 /* UserAssembly.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -494,9 +491,9 @@
 		4767F4D42A8BEB1C00873913 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				4767F4DB2A8BEE4B00873913 /* RepositoriesAssembly.swift */,
 				4767F4D62A8BEB2E00873913 /* Private */,
 				4767F4D52A8BEB2A00873913 /* Public */,
-				4767F4DB2A8BEE4B00873913 /* RepositoriesAssembly.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -504,7 +501,8 @@
 		4767F4D52A8BEB2A00873913 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				4767F4D72A8BEB3700873913 /* RepositoriesProvider.swift */,
+				478E420D2A8F765B0004B7F4 /* Model */,
+				478E420E2A8F76620004B7F4 /* Protocols */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -515,13 +513,6 @@
 				4767F4D92A8BEC3500873913 /* RepositoriesManager.swift */,
 			);
 			path = Private;
-			sourceTree = "<group>";
-		};
-		4767F4E62A8E8D2000873913 /* ReusableViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 		4767F4F62A8E919D00873913 /* Reusable */ = {
@@ -540,11 +531,73 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
-		4767F4FA2A8E9CF300873913 /* ViewModel */ = {
+		478E42002A8F40AB0004B7F4 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				4767F47C2A89149B00873913 /* AssemblyFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		478E42032A8F419B0004B7F4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4767F4A22A8923D700873913 /* DataRequest + toFuture.swift */,
+				4767F4C42A8B500800873913 /* JSONDecoder + default.swift */,
+				478E42122A8F79BF0004B7F4 /* JSONEncoder + default.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		478E42082A8F46C10004B7F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				478E42092A8F46D40004B7F4 /* HistoryViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		478E420D2A8F765B0004B7F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4767F44F2A86A17E00873913 /* Repository.swift */,
+				478E420F2A8F76770004B7F4 /* Requests */,
+				478E42142A8F81C10004B7F4 /* Response */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		478E420E2A8F76620004B7F4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				478E420B2A8F76370004B7F4 /* RepositoriesProvider.swift */,
+				4767F4D72A8BEB3700873913 /* RepositoriesStorageProvider.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		478E420F2A8F76770004B7F4 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				478E42102A8F768C0004B7F4 /* GetRepositoriesRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		478E42142A8F81C10004B7F4 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				478E42152A8F81CE0004B7F4 /* GetRepositoriesResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		47A9D9192A8F90EE00378FE8 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				47A9D91A2A8F910500378FE8 /* NavigationDestinationModifier.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,7 +619,6 @@
 			packageProductDependencies = (
 				4767F4322A868A6800873913 /* KeychainAccess */,
 				4767F4372A868D0F00873913 /* Alamofire */,
-				4767F4552A86A85000873913 /* Cache */,
 				4767F4792A89138300873913 /* Swinject */,
 				4767F4CD2A8BE1E500873913 /* Kingfisher */,
 			);
@@ -601,7 +653,6 @@
 			packageReferences = (
 				4767F4312A868A6800873913 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				4767F4362A868D0F00873913 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				4767F4542A86A85000873913 /* XCRemoteSwiftPackageReference "Cache" */,
 				4767F4782A89138300873913 /* XCRemoteSwiftPackageReference "Swinject" */,
 				4767F4CC2A8BE1E500873913 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
@@ -632,12 +683,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4767F4E32A8D172F00873913 /* GetRepositoriesRequest.swift in Sources */,
 				4767F4C52A8B500800873913 /* JSONDecoder + default.swift in Sources */,
 				4767F4692A88C63200873913 /* Disk.swift in Sources */,
 				4767F43E2A8691CB00873913 /* Router.swift in Sources */,
 				4767F47F2A8914F100873913 /* NetworkAssembly.swift in Sources */,
 				4767F4922A891C9B00873913 /* BaseURLProviderImpl.swift in Sources */,
+				478E420A2A8F46D40004B7F4 /* HistoryViewModel.swift in Sources */,
 				4767F3FB2A862BE300873913 /* LoginView.swift in Sources */,
 				4767F4BE2A8AABC100873913 /* LoginViewModel.swift in Sources */,
 				4767F4982A891DE700873913 /* ErrorURLRequestValidator.swift in Sources */,
@@ -648,30 +699,35 @@
 				4767F4662A88C47D00873913 /* ProtectedStorage.swift in Sources */,
 				4767F49E2A891F5E00873913 /* NetworkError.swift in Sources */,
 				4767F4D32A8BEAD900873913 /* RepositoriesViewModel.swift in Sources */,
-				4767F4892A89187900873913 /* ModulesFactory.swift in Sources */,
 				4767F4502A86A17E00873913 /* Repository.swift in Sources */,
 				4767F4962A891DBF00873913 /* ParameterEncoderFactory.swift in Sources */,
 				4767F4482A86967900873913 /* LaunchScreenViewModel.swift in Sources */,
 				4767F4B82A8A7D7F00873913 /* UserProfileProvider.swift in Sources */,
 				4767F46B2A88C64100873913 /* DIskDirectory.swift in Sources */,
+				478E420C2A8F76370004B7F4 /* RepositoriesProvider.swift in Sources */,
 				4767F4DC2A8BEE4B00873913 /* RepositoriesAssembly.swift in Sources */,
+				478E42022A8F40BF0004B7F4 /* DependencyContainer.swift in Sources */,
 				4767F4B42A8A7D6C00873913 /* UserAssembly.swift in Sources */,
 				4767F4AF2A8A7C2100873913 /* RouterAssembly.swift in Sources */,
 				4767F45A2A878C3500873913 /* User.swift in Sources */,
 				4767F45E2A88B2E900873913 /* NetworkClient.swift in Sources */,
 				4767F4A52A894FDB00873913 /* NetworkRetrier.swift in Sources */,
+				478E42112A8F768C0004B7F4 /* GetRepositoriesRequest.swift in Sources */,
 				4767F4C02A8AADB000873913 /* LoadingButtonView.swift in Sources */,
+				47A9D91B2A8F910500378FE8 /* NavigationDestinationModifier.swift in Sources */,
 				4767F45C2A88B1FC00873913 /* HistoryView.swift in Sources */,
 				4767F46E2A88C68300873913 /* FileStorage.swift in Sources */,
 				4767F3F92A862BE300873913 /* RepositoriesApp.swift in Sources */,
 				4767F4BA2A8A88A400873913 /* UserProfileStorage.swift in Sources */,
+				478E42162A8F81CE0004B7F4 /* GetRepositoriesResponse.swift in Sources */,
 				4767F4712A88CBE600873913 /* AuthCredentialsProvider.swift in Sources */,
-				4767F4D82A8BEB3700873913 /* RepositoriesProvider.swift in Sources */,
+				4767F4D82A8BEB3700873913 /* RepositoriesStorageProvider.swift in Sources */,
 				4767F4902A891C6B00873913 /* BaseURLProvider.swift in Sources */,
 				4767F4A12A89210600873913 /* String + localized.swift in Sources */,
 				4767F4942A891CCD00873913 /* BaseURLAssembly.swift in Sources */,
 				4767F4F92A8E91B000873913 /* ErrorAlertModifier.swift in Sources */,
 				4767F4DA2A8BEC3500873913 /* RepositoriesManager.swift in Sources */,
+				478E42132A8F79BF0004B7F4 /* JSONEncoder + default.swift in Sources */,
 				4767F4632A88B3C800873913 /* NetworkAdapter.swift in Sources */,
 				4767F4752A88CD6100873913 /* UserSessionCreater.swift in Sources */,
 				4767F4422A8693D800873913 /* RepositoriesView.swift in Sources */,
@@ -910,14 +966,6 @@
 				version = 5.7.1;
 			};
 		};
-		4767F4542A86A85000873913 /* XCRemoteSwiftPackageReference "Cache" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hyperoslo/Cache";
-			requirement = {
-				kind = exactVersion;
-				version = 6.0.0;
-			};
-		};
 		4767F4782A89138300873913 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject";
@@ -946,11 +994,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4767F4362A868D0F00873913 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		4767F4552A86A85000873913 /* Cache */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4767F4542A86A85000873913 /* XCRemoteSwiftPackageReference "Cache" */;
-			productName = Cache;
 		};
 		4767F4792A89138300873913 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;

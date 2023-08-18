@@ -3,13 +3,15 @@ import SwiftUI
 struct RepositoriesView: View {
     @Environment(\.openURL) var openURL
     @State var searchText = ""
-    @State var searchIsActive = false
     @StateObject var viewModel = RepositoriesViewModel()
 
     var body: some View {
         List {
-            ForEach(repositories) { repository in
-                RepositoryView(repository: repository)
+            ForEach(viewModel.repositories) { repository in
+                RepositoryView(
+                    repository: repository,
+                    shouldShowVisited: true
+                )
                     .onTapGesture {
                         if let url = URL(string: repository.htmlUrl) {
                             viewModel.showRepository(repository: repository)
@@ -17,35 +19,36 @@ struct RepositoriesView: View {
                         }
                     }
                     .onAppear {
-                        viewModel.paginateIfNeeded(repository: repository)
+                        viewModel.paginateIfNeeded(repository: repository, search: searchText)
                     }
             }
         }
         .listStyle(.plain)
+        .opacity(viewModel.isLoading ? 0 : 1)
         .overlay {
             if viewModel.isLoading {
-                ProgressView("fetch_data")
-                    .progressViewStyle(
-                        CircularProgressViewStyle(tint: .accentColor)
-                    )
+                ZStack {
+                    ProgressView("fetch_data")
+                        .progressViewStyle(
+                            CircularProgressViewStyle(tint: .accentColor)
+                        )
+                }
             }
         }
         .onAppear(perform: viewModel.getRepositories)
         .navigationBarBackButtonHidden()
-        .navigationTitle("Repositories")
+        .navigationTitle("repositories")
         .toolbarBackground(.visible, for: .navigationBar)
-        .searchable(text: $searchText, prompt: "Enter repository name")
+        .searchable(text: $searchText, prompt: "enter_repository_name")
+        .onChange(of: searchText, perform: { text in
+            viewModel.getRepositories(via: text)
+        })
         .toolbar {
-            Button("History") {
+            Button("history") {
                 viewModel.showHistory()
             }
         }
-    }
-
-    private var repositories: [Repository] {
-        searchText.isEmpty ? viewModel.repositories : viewModel.repositories.filter { repository in
-            repository.name.contains(searchText)
-        }
+        .modifier(ErrorAlertModifier(isPresented: $viewModel.showError, error: viewModel.error))
     }
 }
 

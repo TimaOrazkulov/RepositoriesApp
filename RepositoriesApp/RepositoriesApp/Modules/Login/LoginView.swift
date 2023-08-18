@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  RepositoriesApp
-//
-//  Created by Temirlan Orazkulov on 11.08.2023.
-//
-
 import SwiftUI
 
 struct LoginView: View {

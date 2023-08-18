@@ -4,27 +4,24 @@ import Combine
 final class RepositoriesViewModel: ObservableObject {
     @Published var repositories: [Repository] = []
     @Published var isLoading = true
-    @Published var error: Error?
+    @Published var showError = false
+    var error: Error?
 
-    private let networkClient = assembler.resolver.resolve(NetworkClient.self)!
-    private let repositoriesProvider = assembler.resolver.resolve(RepositoriesProvider.self)!
-    private let router = assembler.resolver.resolve(Router.self)!
+    private let repositoriesStorageProvider = DependencyContainer.shared.resolve(RepositoriesStorageProvider.self)!
+    private let repositoriesProvider = DependencyContainer.shared.resolve(RepositoriesProvider.self)!
+    private let router = DependencyContainer.shared.resolve(Router.self)!
 
+    private var allRepositories: [Repository] = []
     private var cancellables: Set<AnyCancellable> = []
     
     private var page = 1
-    private let limit = 10
+    private let perPage = 30
     private var shouldDownloadNextPage = true
+    private var searchedText = ""
 
     func getRepositories() {
         isLoading = true
-        let cancellable: AnyPublisher<[Repository], Error> = networkClient.get(
-            "/user/repos",
-            parameters: GetRepositoriesRequest(
-                page: page,
-                limit: limit
-            )
-        )
+        let cancellable = repositoriesProvider.getRepositories()
         cancellable.sink { [weak self] completion in
             switch completion {
             case let .failure(error):
@@ -34,23 +31,53 @@ final class RepositoriesViewModel: ObservableObject {
                 self?.isLoading = false
             }
         } receiveValue: { [weak self] repositories in
+            self?.repositories = repositories
+            self?.allRepositories = repositories
+        }.store(in: &cancellables)
+    }
+    
+    func getRepositories(via text: String) {
+        guard !text.isEmpty else {
+            repositories = allRepositories
+            return
+        }
+        
+        if text != searchedText {
+            repositories = []
+        }
+
+        isLoading = true
+        let cancellable = repositoriesProvider.getRepositories(
+            with: GetRepositoriesRequest(
+                query: text,
+                page: page,
+                perPage: perPage,
+                sort: .stars
+            )
+        ).debounce(for: 0.5, scheduler: DispatchQueue.main)
+        
+        cancellable
+            .sink { [weak self] completion in
+            switch completion {
+            case let .failure(error):
+                self?.error = error
+                fallthrough
+            case .finished:
+                self?.isLoading = false
+            }
+        } receiveValue: { [weak self] response in
             guard let self else {
                 return
             }
 
-            self.shouldDownloadNextPage = repositories.count == limit
-            let repositories = repositories.map { repository in
-                var repository = repository
-                repository.isChecked = self.isCheckedRepository(repository: repository)
-                return repository
-            }
-
+            self.shouldDownloadNextPage = response.incompleteResults
             if self.repositories.isEmpty {
-                self.repositories = repositories
+                self.repositories = response.items
             } else {
-                self.repositories.append(contentsOf: repositories)
+                self.repositories.append(contentsOf: response.items)
             }
         }.store(in: &cancellables)
+            
     }
 
     func showRepository(repository: Repository) {
@@ -61,19 +88,19 @@ final class RepositoriesViewModel: ObservableObject {
         router.showHistory()
     }
 
-    func paginateIfNeeded(repository: Repository) {
+    func paginateIfNeeded(repository: Repository, search text: String) {
         guard repositories.last == repository else {
             return
         }
         
-        page += 1
+        page = text == searchedText ? (page + 1) : 1
         if shouldDownloadNextPage {
-            getRepositories()
+            getRepositories(via: text)
         }
     }
 
     private func isCheckedRepository(repository: Repository) -> Bool {
-        repositoriesProvider.isChecked(repository: repository)
+        repositoriesStorageProvider.isChecked(repository: repository)
     }
 
     private func setCheckedRepository(repository: Repository) {
@@ -83,6 +110,6 @@ final class RepositoriesViewModel: ObservableObject {
         }
 
         repositories[index].isChecked = true
-        repositoriesProvider.setChecked(repository: repository)
+        repositoriesStorageProvider.setChecked(repository: repository)
     }
 }

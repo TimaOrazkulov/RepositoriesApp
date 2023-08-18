@@ -1,6 +1,6 @@
 import Foundation
 
-protocol RepositoriesProvider: AnyObject {
+protocol RepositoriesStorageProvider: AnyObject {
     func getLastSeenRepositories() -> [Repository]
     func setChecked(repository: Repository)
     func isChecked(repository: Repository) -> Bool

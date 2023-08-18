@@ -3,6 +3,7 @@ import Kingfisher
 
 struct RepositoryView: View {
     let repository: Repository
+    let shouldShowVisited: Bool
 
     var body: some View {
         ZStack {
@@ -23,7 +24,7 @@ struct RepositoryView: View {
                         owner
                     }
                 }
-                if repository.isChecked {
+                if repository.isChecked, shouldShowVisited {
                     Image(uiImage: UIImage(named: "isChecked")!)
                         .resizable()
                         .frame(width: 24, height: 24)
@@ -80,13 +81,5 @@ struct RepositoryView: View {
         Image(uiImage: UIImage(named: "isChecked")!)
             .resizable()
             .frame(width: 24, height: 24)
-    }
-}
-
-struct RepositoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        List(0..<10) { index in
-            RepositoryView(repository: Repository(id: 1, name: "grit", fullName: "mojombo/grit", description: "**Grit is no longer maintained. Check out libgit2/rugged.** Grit gives you object oriented read/write access to Git repositories via Ruby.", htmlUrl: "https://github.com/mojombo/grit", owner: .init(id: 1, login: "TimaOrazkulov", avatarUrl: "https://github.com/mojombo/grit")))
-        }
     }
 }

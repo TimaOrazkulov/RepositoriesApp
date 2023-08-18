@@ -5,3 +5,6 @@
 "fetch_data" = "Fetching data, please wait...";
 "error" = "Error";
 "unknown_error" = "Unknown error occured";
+"history" = "History";
+"enter_repository_name" = "Enter repository name";
+"repositories" = "Repositories";

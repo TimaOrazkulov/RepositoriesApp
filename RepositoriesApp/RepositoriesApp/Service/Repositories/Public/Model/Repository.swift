@@ -19,6 +19,8 @@ struct Repository: Codable, Hashable, Identifiable {
     var isChecked = false
 }
 
+// MARK: - Owner
+
 extension Repository {
     struct Owner: Codable, Hashable, Identifiable {
         let id: Int
