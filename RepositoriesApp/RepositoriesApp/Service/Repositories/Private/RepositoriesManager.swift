@@ -36,7 +36,7 @@ extension RepositoriesManager: RepositoriesProvider {
 
 extension RepositoriesManager: RepositoriesStorageProvider {
     func getLastSeenRepositories() -> [Repository] {
-        seenRepos ?? []
+        seenRepos?.reversed() ?? []
     }
     
     func isChecked(repository: Repository) -> Bool {

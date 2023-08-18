@@ -31,8 +31,13 @@ final class RepositoriesViewModel: ObservableObject {
                 self?.isLoading = false
             }
         } receiveValue: { [weak self] repositories in
-            self?.repositories = repositories
-            self?.allRepositories = repositories
+            guard let self else {
+                return
+            }
+
+            let repositories = setRepositoriesChecked(repositories: repositories)
+            self.repositories = repositories
+            allRepositories = repositories
         }.store(in: &cancellables)
     }
     
@@ -54,7 +59,7 @@ final class RepositoriesViewModel: ObservableObject {
                 perPage: perPage,
                 sort: .stars
             )
-        ).debounce(for: 0.5, scheduler: DispatchQueue.main)
+        )
         
         cancellable
             .sink { [weak self] completion in
@@ -71,10 +76,11 @@ final class RepositoriesViewModel: ObservableObject {
             }
 
             self.shouldDownloadNextPage = response.incompleteResults
+            let repositories = setRepositoriesChecked(repositories: response.items)
             if self.repositories.isEmpty {
-                self.repositories = response.items
+                self.repositories = repositories
             } else {
-                self.repositories.append(contentsOf: response.items)
+                self.repositories.append(contentsOf: repositories)
             }
         }.store(in: &cancellables)
             
@@ -96,6 +102,14 @@ final class RepositoriesViewModel: ObservableObject {
         page = text == searchedText ? (page + 1) : 1
         if shouldDownloadNextPage {
             getRepositories(via: text)
+        }
+    }
+
+    private func setRepositoriesChecked(repositories: [Repository]) -> [Repository] {
+        repositories.map { repository in
+            var repository = repository
+            repository.isChecked = repositoriesStorageProvider.isChecked(repository: repository)
+            return repository
         }
     }
 
