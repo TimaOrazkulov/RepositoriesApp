@@ -11,6 +11,6 @@ final class UserProfileManager: UserProfileProvider {
     }
     
     func getUser(with headers: [HTTPHeader]) -> AnyPublisher<User, Error> {
-        networkClient.get("/user")
+        networkClient.get("/user", headers: headers)
     }
 }
